@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/img_star"
+            android:layout_width="65dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:src="@drawable/star_red" />
+
+        <TextView
+            android:id="@+id/person_name"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="陈*斌"
+            android:gravity="center"
+            android:textColor="#1D1D1C" />
+
+        <TextView
+            android:id="@+id/person_score"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="98"
+            android:textColor="#1D1D1C" />
+
+        <TextView
+            android:id="@+id/person_local"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="湖里分局第一支队"
+            android:gravity="center"
+            android:textColor="#1D1D1C" />
+    </LinearLayout>
+</LinearLayout>
