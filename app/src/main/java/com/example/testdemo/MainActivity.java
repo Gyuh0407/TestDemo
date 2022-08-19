@@ -2,16 +2,16 @@ package com.example.testdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
+
 import android.os.Bundle;
 
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.support.v7.widget.RecyclerView;
+
+import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,10 +20,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageView;
-    ListView listView;
-
-    int temp=0;
+    RecyclerView recyclerView;
 
     private int[] imgIds = new int[]{R.drawable.blank,R.drawable.ranking,R.drawable.number,R.drawable.star_red,R.drawable.star_red, R.drawable.star_red,R.drawable.star_yellow,R.drawable.star_yellow,R.drawable.star_yellow};
     private String[]names=new String[]{"","","姓名","陈*兵","张*玲","林*凯","陈* ","魏*可","陈*宗"};
@@ -35,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView= (ImageView) findViewById(R.id.image_view1);
-        imageView= (ImageView) findViewById(R.id.image_view2);
-        imageView= (ImageView) findViewById(R.id.image_view3);
+
 
 
 
@@ -48,15 +43,13 @@ public class MainActivity extends AppCompatActivity {
             showitem.put("names", names[i]);
             showitem.put("score", score[i]);
             showitem.put("local", local[i]);
-
             listitem.add(showitem);
         }
-
         //创建一个simpleAdapter
-        listView = (ListView) findViewById(R.id.list_view);
-        SimpleAdapter myAdapter = new SimpleAdapter(getApplicationContext(), listitem, R.layout.simplesdapteractivity, new String[]{"imgIds", "names", "score","local"}, new int[]{R.id.img_star, R.id.person_name, R.id.person_score, R.id.person_local});
+        recyclerView = findViewById(R.id.Recycler_view);
+        ListAdapter myAdapter = new SimpleAdapter(getApplicationContext(), listitem, R.layout.simplesdapteractivity, new String[]{"imgIds", "names", "score","local"}, new int[]{R.id.img_star, R.id.person_name, R.id.person_score, R.id.person_local});
 
-        listView.setAdapter(myAdapter);
+        recyclerView.setAdapter(myAdapter);
 
 
 

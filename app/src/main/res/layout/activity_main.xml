@@ -15,8 +15,9 @@
         android:scaleType="fitStart"
         android:src="@drawable/firsttop" />
 
-    <ListView
-        android:id="@+id/list_view"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Recycler_view"
         android:layout_width="match_parent"
         android:layout_height="520dp"
         android:layout_marginLeft="20dp"
@@ -26,42 +27,55 @@
 
         />
 
+
     <ImageView
         android:id="@+id/image_view2"
-        android:layout_width="350dp"
-        android:layout_height="417dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="top"
 
-        android:src="@drawable/firsttwo"   ></ImageView>
+        android:src="@drawable/firsttwo"></ImageView>
 
-<RelativeLayout
-    android:layout_marginTop="185dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    >
 
-    <ImageView
-        android:id="@+id/image_view3"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="106dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:src="@drawable/icon01" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="174dp"
+        android:background="#00ffffff"
+        android:drawableTop="@drawable/icon01"
+        android:text="答题闯关"
+        android:textColor="#fdecec"
+        android:textSize="8dp"></Button>
 
-    <ImageView
-        android:id="@+id/image_view4"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="165dp"
-        android:src="@drawable/icon02"></ImageView>
-    <ImageView
-        android:id="@+id/image_view5"
-        android:layout_marginLeft="280dp"
-        android:src="@drawable/icon03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ImageView>
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="174dp"
+        android:background="#00ffffff"
+        android:drawableTop="@drawable/icon02"
+        android:text="答题闯关"
+        android:textColor="#f8eb66"
+        android:textSize="8dp"></Button>
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="174dp"
+        android:background="#00ffffff"
+        android:drawableTop="@drawable/icon03"
+        android:text="答题闯关"
+        android:textColor="#fdecec"
+        android:textSize="8dp">
+    </Button>
 
-</RelativeLayout>
 
 </FrameLayout>
