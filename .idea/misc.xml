@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/AndroidSave/TestDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/AndroidSave/TestDemo/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidSave/TestDemo/app/src/main/res/layout/rv_item_score_rank_head.xml" value="0.264" />
+        <entry key="..\:/AndroidSave/TestDemo/app/src/main/res/layout/rv_top.xml" value="0.2328125" />
         <entry key="..\:/AndroidSave/TestDemo/app/src/main/res/layout/simplesdapteractivity.xml" value="0.3795918367346939" />
       </map>
     </option>

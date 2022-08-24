@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,15 +13,44 @@
         android:background="#ff00"
         android:scaleType="fitStart"
         android:src="@drawable/firsttop" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Recycler_view"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="195dp"
+        android:background="#f7ddde"
+        />
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="270dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="前10位积分排名"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="270dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dp"
+        android:text="查看更多"
+
+
+
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="290dp"
         android:background="#f7ddde"
 
         />
@@ -33,7 +61,7 @@
         android:layout_width="380dp"
         android:layout_height="200dp"
         android:layout_marginTop="118dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="8dp"
         android:layout_gravity="top"
 
         android:src="@drawable/firsttwo"></ImageView>

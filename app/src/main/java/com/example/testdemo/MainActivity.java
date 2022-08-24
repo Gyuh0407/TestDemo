@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+import android.text.Html;
+import android.widget.TextView;
 
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.testdemo.bean.ScoreRankBean;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,14 +20,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter mRecyclerAdapter;
-    private List<List<String>> mList;
+    private ScoreRankAdapter mRecyclerAdapter;
 
 
-    private String[] imgIds = new String[]{"@drawable/blank","@drawable/ranking","@drawable/number","@drawable/star_red", "@drawable/star_red", "@drawable/star_red","@drawable/star_yellow","@drawable/star_yellow","@drawable/star_yellow"};
-    private  String[]names=new String[]{"","","姓名","陈*兵","张*玲","林*凯","陈* ","魏*可","陈*宗"};
-    private String[]score=new String[]{"","","分数","98","98","96","93","92","90"};
-    private String[]local=new String[]{"","查看更多","单位部门","湖里分局第一支队","海沧分局第一支队","思明分局第一支队","集美分局第一支队","思明分局第一支队","同安分局第一支队"};
+    private static final String[]NAMES=new String[]{"陈*兵","张*玲","林*凯","陈* ","魏*可","陈*宗","陈*兵","蓝*国","魏*可","张*毅"};
+    private static final int[]SCORES=new int[]{98,98,96,93,92,90,88,88,86,85};
+    private static final String[]LOCALS=new String[]{"湖里分局第一支队","海沧分局第一支队","思明分局第一支队","集美分局第一支队","思明分局第一支队","同安分局第一支队","同安分局第一支队","海沧分局第一支队","思明分局第一支队","海沧分局第一支队"};
 
 
 
@@ -35,41 +38,31 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = this.findViewById(R.id.Recycler_view);
         // 设置布局管理器
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
 
-        mList = getList();
-
-        mRecyclerAdapter = new MyRecyclerViewAdapter(this, mList);
+        mRecyclerAdapter = new ScoreRankAdapter(this, getList());
 
         mRecyclerView.setAdapter(mRecyclerAdapter);
+        TextView t = (TextView) findViewById(R.id.link);
+        String webLinkText = "<a href='https://www.baidu.com'>查看更多</a>" ;
+        t.setText(Html.fromHtml(webLinkText));
+
 
 
     }
 
-    private List<List<String>> getList() {
-        List<List<String>> list = new ArrayList<>();
-        List<String> list1 = new ArrayList<>();
-        List<String> list2 = new ArrayList<>();
-        List<String> list3 = new ArrayList<>();
-        List<String> list4 = new ArrayList<>();
-        for (int i = 0; i < imgIds.length; i++) {
-            list1.add(imgIds[i]);
+    private List<ScoreRankBean> getList() {
+        List<ScoreRankBean> list = new ArrayList<>();
+        for (int i = 0; i < NAMES.length; i++) {
+            ScoreRankBean bean = new ScoreRankBean();
+            bean.rank = i + 1;
+            bean.names = NAMES[i];
+            bean.score = SCORES[i];
+            bean.depart = LOCALS[i];
+            list.add(bean);
         }
-        list.add(list1);
-        for (int i = 0; i < names.length; i++) {
-            list1.add(names[i]);
-        }
-        list.add(list2);
-        for (int i = 0; i < score.length; i++) {
-            list1.add(score[i]);
-        }
-        list.add(list3);
-        for (int i = 0; i < local.length; i++) {
-            list1.add(local[i]);
-        }
-        list.add(list4);
         return list;
     }
     @Override
